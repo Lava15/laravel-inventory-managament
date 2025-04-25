@@ -12,7 +12,6 @@ RUN apk add --no-cache \
 RUN rm -rf /var/cache/apk/*
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-
-USER www-data
+RUN chown -R www-data:www-data /var/www/html
 
 CMD ["php-fpm", "-F"]

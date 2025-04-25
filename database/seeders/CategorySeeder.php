@@ -1,14 +1,15 @@
 <?php
 
-declare(strict_types=1);
-
-namespace {{ namespace }};
+namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-final class {{ class }} extends Seeder
+class CategorySeeder extends Seeder
 {
+    /**
+     * Run the database seeds.
+     */
     public function run(): void
     {
         //

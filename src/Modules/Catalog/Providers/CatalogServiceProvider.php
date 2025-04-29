@@ -17,5 +17,6 @@ final class CatalogServiceProvider extends ServiceProvider
     {
       $this->loadMigrationsFrom(paths: __DIR__.'/../Database/Migrations');
       $this->mergeConfigFrom(path:__DIR__.'/../config.php', key: 'catalog');
+      $this->loadRoutesFrom(path: __DIR__.'/../Routes/web.php');
     }
 }

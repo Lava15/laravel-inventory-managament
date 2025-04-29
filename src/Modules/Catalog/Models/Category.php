@@ -11,4 +11,9 @@ final class Category extends Model
 {
     use HasFactory;
     protected $fillable = ['slug', 'name', 'description', 'is_active'];
+    protected function casts(): array {
+        return [
+            'is_active' => 'boolean',
+        ];
+    }
 }

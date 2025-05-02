@@ -1,8 +1,7 @@
 <?php
 
-use Modules\Catalog\Providers\CatalogServiceProvider;
-
 return [
     App\Providers\AppServiceProvider::class,
-    CatalogServiceProvider::class,
+    Modules\Product\Providers\ProductServiceProvider::class,
+    Modules\Catalog\Providers\CatalogServiceProvider::class,
 ];

@@ -15,6 +15,9 @@ final class {{ class }} extends ServiceProvider
 
     public function boot(): void
     {
-        //
+      $this->loadMigrationsFrom(paths: __DIR__.'/../Database/Migrations');
+      $this->mergeConfigFrom(path:__DIR__.'/../config.php', key: '');
+      $this->loadRoutesFrom(path: __DIR__.'/../Routes/web.php');
+      $this->loadRoutesFrom(path: __DIR__.'/../Routes/api.php');
     }
 }

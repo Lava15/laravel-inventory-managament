@@ -1,21 +1,104 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<x-layouts.app>
+      <header class="bg-green-600 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-bold">GG Tailwind Page</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="#section1" class="hover:text-gray-300">Section 1</a></li>
+                    <li><a href="#section2" class="hover:text-gray-300">Section 2</a></li>
+                    <li><a href="#section3" class="hover:text-gray-300">Section 3</a></li>
+                    <li><a href="#section4" class="hover:text-gray-300">Section 4</a></li>
+                    <li><a href="#section5" class="hover:text-gray-300">Section 5</a></li>
+                    <li><a href="#section6" class="hover:text-gray-300">Section 6</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-        <title>{{ config('app.name') ?? 'Laravel App' }}</title>
+    <!-- Sections -->
+    <main class="bg-white p-4">
+        <section id="section1" class="mb-8">
+            <h2 class="text-2xl font-bold text-green-600">Section 1</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <img src="https://via.placeholder.com/400" alt="Placeholder" class="w-full h-auto">
+                </div>
+                <div>
+                    <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+            </div>
+        </section>
+        <section id="section2" class="mb-8">
+            <h2 class="text-2xl font-bold text-green-600">Section 2</h2>
+            <div class="flex flex-col md:flex-row gap-4">
+                <div class="flex-1">
+                    <p class="text-gray-700">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+                <div class="flex-1">
+                    <img src="https://via.placeholder.com/400" alt="Placeholder" class="w-full h-auto">
+                </div>
+            </div>
+        </section>
+        <section id="section3" class="mb-8">
+            <h2 class="text-2xl font-bold text-green-600">Section 3</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                    <img src="https://via.placeholder.com/400" alt="Placeholder" class="w-full h-auto">
+                </div>
+                <div>
+                    <p class="text-gray-700">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                </div>
+                <div>
+                    <img src="https://via.placeholder.com/400" alt="Placeholder" class="w-full h-auto">
+                </div>
+            </div>
+        </section>
+        <section id="section4" class="mb-8">
+            <h2 class="text-2xl font-bold text-green-600">Section 4</h2>
+            <div class="flex flex-col md:flex-row gap-4">
+                <div class="flex-1">
+                    <img src="https://via.placeholder.com/400" alt="Placeholder" class="w-full h-auto">
+                </div>
+                <div class="flex-1">
+                    <p class="text-gray-700">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+            </div>
+        </section>
+        <section id="section5" class="mb-8">
+            <h2 class="text-2xl font-bold text-green-600">Section 5</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+                <div>
+                    <img src="https://via.placeholder.com/400" alt="Placeholder" class="w-full h-auto">
+                </div>
+            </div>
+        </section>
+        <section id="section6" class="mb-8">
+            <h2 class="text-2xl font-bold text-green-600">Section 6</h2>
+            <div class="flex flex-col md:flex-row gap-4">
+                <div class="flex-1">
+                    <img src="https://via.placeholder.com/400" alt="Placeholder" class="w-full h-auto">
+                </div>
+                <div class="flex-1">
+                    <p class="text-gray-700">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+            </div>
+        </section>
+    </main>
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
-
-        <!-- Styles / Scripts -->
-        @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
-            @vite(['resources/css/app.css', 'resources/js/app.js'])
-        @endif
-    </head>
-    <body class="bg-[#FDFDFC] text-[#1b1b18] flex p-6 lg:p-8 items-center lg:justify-center min-h-screen flex-col">
-      <h1 class="text-3xl font-bold">Home Page</h1> 
-    </body>
-</html>
+    <!-- Footer -->
+    <footer class="bg-green-600 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <p>&copy; 2025 GG Tailwind Page</p>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="#" class="hover:text-gray-300">Facebook</a></li>
+                    <li><a href="#" class="hover:text-gray-300">Twitter</a></li>
+                    <li><a href="#" class="hover:text-gray-300">Instagram</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+</x-layouts.app>

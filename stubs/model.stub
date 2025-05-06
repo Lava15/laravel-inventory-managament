@@ -10,6 +10,9 @@ use Illuminate\Database\Eloquent\Model;
 final class {{ class }} extends Model
 {
     {{ factory }}
+    use SoftDeletes;
+    use HasUuids;
+
     protected $fillable = [];
 
     protected static function newFactory(): {{ class }}Factory

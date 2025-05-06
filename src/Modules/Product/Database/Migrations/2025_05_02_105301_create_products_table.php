@@ -19,6 +19,7 @@ return new class extends Migration {
       $table->integer('order')->default(999);
       $table->boolean('is_active');
       $table->boolean('is_featured')->default(false);
+      $table->softDeletes();
       $table->timestamps();
     });
   }

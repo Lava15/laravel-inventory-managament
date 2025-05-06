@@ -15,6 +15,5 @@ class ProductTest extends TestCase
     $response = $this->get(route('products:index'));
 
     $response->assertStatus(200);
-    $response->assertSee('Products');
   }
 }

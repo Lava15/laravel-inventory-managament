@@ -1,20 +1,4 @@
 <x-layouts.app>
-      <header class="bg-green-600 text-white p-4">
-        <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-3xl font-bold">GG Tailwind Page</h1>
-            <nav>
-                <ul class="flex space-x-4">
-                    <li><a href="#section1" class="hover:text-gray-300">Section 1</a></li>
-                    <li><a href="#section2" class="hover:text-gray-300">Section 2</a></li>
-                    <li><a href="#section3" class="hover:text-gray-300">Section 3</a></li>
-                    <li><a href="#section4" class="hover:text-gray-300">Section 4</a></li>
-                    <li><a href="#section5" class="hover:text-gray-300">Section 5</a></li>
-                    <li><a href="#section6" class="hover:text-gray-300">Section 6</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
     <!-- Sections -->
     <main class="bg-white p-4">
         <section id="section1" class="mb-8">
@@ -87,18 +71,4 @@
             </div>
         </section>
     </main>
-
-    <!-- Footer -->
-    <footer class="bg-green-600 text-white p-4">
-        <div class="container mx-auto flex justify-between items-center">
-            <p>&copy; 2025 GG Tailwind Page</p>
-            <nav>
-                <ul class="flex space-x-4">
-                    <li><a href="#" class="hover:text-gray-300">Facebook</a></li>
-                    <li><a href="#" class="hover:text-gray-300">Twitter</a></li>
-                    <li><a href="#" class="hover:text-gray-300">Instagram</a></li>
-                </ul>
-            </nav>
-        </div>
-    </footer>
 </x-layouts.app>

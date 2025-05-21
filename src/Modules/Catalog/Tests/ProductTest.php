@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Modules\Product\Tests;
+namespace Modules\Catalog\Tests;
 
 use Tests\TestCase;
 use PHPUnit\Framework\Attributes\Test;

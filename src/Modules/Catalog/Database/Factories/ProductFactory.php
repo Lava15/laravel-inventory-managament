@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Modules\Product\Database\Factories;
+namespace Modules\Catalog\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Moduels\Product\Models\Product;
+use Moduels\Catalog\Models\Product;
 
 final class ProductFactory extends Factory
 {

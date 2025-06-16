@@ -1,4 +1,4 @@
-<footer class="w-full bg-green-600 text-white p-4">
+<footer class="w-full bg-green-800 text-white p-4">
   <div class="mx-auto flex justify-between items-center">
       <p>&copy; 2025 GG Tailwind Page</p>
       <nav>

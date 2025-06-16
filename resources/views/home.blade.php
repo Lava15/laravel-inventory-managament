@@ -1,74 +1,46 @@
 <x-layouts.app>
-    <!-- Sections -->
-    <main class="bg-white p-4">
-        <section id="section1" class="mb-8">
-            <h2 class="text-2xl font-bold text-green-600">Section 1</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                    <img src="https://via.placeholder.com/400" alt="Placeholder" class="w-full h-auto">
-                </div>
-                <div>
-                    <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-            </div>
-        </section>
-        <section id="section2" class="mb-8">
-            <h2 class="text-2xl font-bold text-green-600">Section 2</h2>
-            <div class="flex flex-col md:flex-row gap-4">
-                <div class="flex-1">
-                    <p class="text-gray-700">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                </div>
-                <div class="flex-1">
-                    <img src="https://via.placeholder.com/400" alt="Placeholder" class="w-full h-auto">
-                </div>
-            </div>
-        </section>
-        <section id="section3" class="mb-8">
-            <h2 class="text-2xl font-bold text-green-600">Section 3</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div>
-                    <img src="https://via.placeholder.com/400" alt="Placeholder" class="w-full h-auto">
-                </div>
-                <div>
-                    <p class="text-gray-700">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                </div>
-                <div>
-                    <img src="https://via.placeholder.com/400" alt="Placeholder" class="w-full h-auto">
-                </div>
-            </div>
-        </section>
-        <section id="section4" class="mb-8">
-            <h2 class="text-2xl font-bold text-green-600">Section 4</h2>
-            <div class="flex flex-col md:flex-row gap-4">
-                <div class="flex-1">
-                    <img src="https://via.placeholder.com/400" alt="Placeholder" class="w-full h-auto">
-                </div>
-                <div class="flex-1">
-                    <p class="text-gray-700">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
-            </div>
-        </section>
-        <section id="section5" class="mb-8">
-            <h2 class="text-2xl font-bold text-green-600">Section 5</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                    <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-                <div>
-                    <img src="https://via.placeholder.com/400" alt="Placeholder" class="w-full h-auto">
-                </div>
-            </div>
-        </section>
-        <section id="section6" class="mb-8">
-            <h2 class="text-2xl font-bold text-green-600">Section 6</h2>
-            <div class="flex flex-col md:flex-row gap-4">
-                <div class="flex-1">
-                    <img src="https://via.placeholder.com/400" alt="Placeholder" class="w-full h-auto">
-                </div>
-                <div class="flex-1">
-                    <p class="text-gray-700">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                </div>
-            </div>
-        </section>
-    </main>
+  <img class="h-full" src="{{  asset('assets/images/hero_banner_desktop.png') }}" alt="">
+
+  <section class="py-12 px-4">
+    <h2 class="text-3xl font-bold text-green-700 mb-8 text-center">Our Products</h2>
+
+    <!-- Filter Options -->
+    <div class="flex justify-center mb-10 flex-wrap gap-4">
+      <button class="px-4 py-2 bg-green-600 text-white rounded-full">All</button>
+      <button class="px-4 py-2 bg-green-100 text-green-700 rounded-full">Keychains</button>
+      <button class="px-4 py-2 bg-green-100 text-green-700 rounded-full">Signs</button>
+      <button class="px-4 py-2 bg-green-100 text-green-700 rounded-full">Accessories</button>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-24">
+      <!-- Product Card -->
+      <div class="bg-white rounded-2xl shadow p-6 flex flex-col items-center">
+        <img src="product1.jpg" alt="Product 1" class="h-64 mb-6 object-contain">
+        <h3 class="text-2xl font-semibold mb-2 text-center">Product Name</h3>
+        <p class="text-green-700 font-bold mb-4 text-lg">$00.00</p>
+        <button class="px-6 py-3 bg-green-600 text-white rounded hover:bg-green-700 transition">View Details</button>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow p-6 flex flex-col items-center">
+        <img src="product1.jpg" alt="Product 1" class="h-64 w-100 mb-6 object-contain">
+        <h3 class="text-2xl font-semibold mb-2 text-center">Product Name</h3>
+        <p class="text-green-700 font-bold mb-4 text-lg">$00.00</p>
+        <button class="px-6 py-3 bg-green-600 text-white rounded hover:bg-green-700 transition">View Details</button>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-6 flex flex-col items-center">
+        <img src="product1.jpg" alt="Product 1" class="h-64 mb-6 object-contain">
+        <h3 class="text-2xl font-semibold mb-2 text-center">Product Name</h3>
+        <p class="text-green-700 font-bold mb-4 text-lg">$00.00</p>
+        <button class="px-6 py-3 bg-green-600 text-white rounded hover:bg-green-700 transition">View Details</button>
+      </div>
+      <!-- Repeat the product card for all products -->
+    </div>
+
+    <!-- Load More Button -->
+    <div class="flex justify-center mt-12">
+      <button class="px-6 py-3 bg-green-600 text-white rounded-full hover:bg-green-700 transition">Load More</button>
+    </div>
+  </section>
+
 </x-layouts.app>

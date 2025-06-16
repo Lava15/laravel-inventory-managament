@@ -1,4 +1,4 @@
-<header class="w-full bg-green-600 text-white p-4">
+<header class="w-full bg-green-800 text-white p-4">
   <div class=" mx-auto flex justify-between items-center">
       <h1 class="text-3xl font-bold">
              LOGO         

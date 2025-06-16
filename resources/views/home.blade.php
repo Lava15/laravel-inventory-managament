@@ -42,5 +42,5 @@
       <button class="px-6 py-3 bg-green-600 text-white rounded-full hover:bg-green-700 transition">Load More</button>
     </div>
   </section>
-
+  <livewire:chat />
 </x-layouts.app>

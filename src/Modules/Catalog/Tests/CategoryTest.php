@@ -13,6 +13,7 @@ class CategoryTest extends TestCase
   private function createCategory()
   {
     return Category::query()->create([
+      'name' => 'Test Category',
       'is_active' => true,
     ]);
   }
@@ -22,6 +23,7 @@ class CategoryTest extends TestCase
   {
     $category = $this->createCategory();
     $this->assertDatabaseHas('categories', [
+      'name' => $category->name,
       'id' => $category->id,
     ]);
   }

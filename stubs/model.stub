@@ -6,14 +6,20 @@ namespace {{ namespace }};
 
 {{ factoryImport }}
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Concerns\HasUlids;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 final class {{ class }} extends Model
 {
     {{ factory }}
     use SoftDeletes;
-    use HasUuids;
+    use HasUlids;
 
     protected $fillable = [];
+  protected function casts(): array
+  {
+    return [];
+  }
 
     protected static function newFactory(): {{ class }}Factory
     {

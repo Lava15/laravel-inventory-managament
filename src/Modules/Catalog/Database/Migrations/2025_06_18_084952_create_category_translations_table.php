@@ -11,7 +11,7 @@ return new class extends Migration {
   {
     Schema::create('category_translations', function (Blueprint $table) {
       $table->ulid('id')->primary();
-      $table->foreignUlid('category_id')->constrained('categories');
+      $table->foreignUlid('category_id')->constrained();
       $table->string('slug');
       $table->string('locale')->index();
       $table->string('name');

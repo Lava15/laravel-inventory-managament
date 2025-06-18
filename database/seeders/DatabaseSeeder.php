@@ -12,7 +12,7 @@ final class DatabaseSeeder extends Seeder
   public function run(): void
   {
     if (app()->isLocal()) {
-      $this->call([
+      $this->call(class: [
         CategorySeeder::class,
       ]);
       User::query()->updateOrCreate(
@@ -21,7 +21,7 @@ final class DatabaseSeeder extends Seeder
           'email' => 'admin@admin.com',
           'password' => Hash::make('password'),
         ]
-        );
+      );
     }
   }
 }

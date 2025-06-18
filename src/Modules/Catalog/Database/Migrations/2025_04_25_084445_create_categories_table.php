@@ -6,24 +6,25 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
-    public function up(): void
-    {
-        Schema::create('categories', function (Blueprint $table) {
-            $table->uuid('id')->primary();
-            $table->string('slug')->unique();
-            $table->string('name');
-            $table->text('description');
-            $table->boolean('is_active');
-            $table->timestamps();
-        });
-    }
+return new class extends Migration {
+  public function up(): void
+  {
+    Schema::create('categories', function (Blueprint $table) {
+      $table->ulid('id')->primary();
+      $table->foreignUlid('parent_id')->nullable()->constrained('categories');
+      $table->unsignedMediumInteger('position')->default(0);
+      $table->boolean('is_active');
+      $table->boolean('is_featured')->default(false);
+      $table->string('image')->nullable();
+      $table->softDeletes();
+      $table->timestamps();
+    });
+  }
 
-    public function down(): void
-    {
-      if (app()->isLocal()) {
-          Schema::dropIfExists('categories');
-      }
+  public function down(): void
+  {
+    if (app()->isLocal()) {
+      Schema::dropIfExists('categories');
     }
+  }
 };

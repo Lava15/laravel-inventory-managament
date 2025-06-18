@@ -13,8 +13,7 @@ final class CategoryFactory extends Factory
     public function definition(): array
     {
         return [
-            'id' => fake()->uuid, 
-            'slug' => fake()->slug,
+            'id' => fake()->ulid, 
             'name' => fake()->word,
             'description' => fake()->sentence,
             'is_active' => fake()->boolean,

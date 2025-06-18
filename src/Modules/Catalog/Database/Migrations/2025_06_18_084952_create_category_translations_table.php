@@ -12,7 +12,7 @@ return new class extends Migration {
     Schema::create('category_translations', function (Blueprint $table) {
       $table->ulid('id')->primary();
       $table->foreignUlid('category_id')->constrained('categories');
-      $table->string('slug')->unique();
+      $table->string('slug');
       $table->string('locale')->index();
       $table->string('name');
       $table->text('description');
@@ -21,6 +21,7 @@ return new class extends Migration {
       $table->string('meta_robots')->default('index, follow');
       $table->string('meta_canonical')->nullable();
       $table->string('meta_image')->nullable();
+      $table->unique(['slug', 'locale'], 'slug_locale_unique');
       $table->unique(['category_id', 'locale'], 'category_locale_unique');
       $table->softDeletes();
       $table->timestamps();

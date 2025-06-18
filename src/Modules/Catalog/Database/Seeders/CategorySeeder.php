@@ -7,10 +7,8 @@ use Modules\Catalog\Models\Category;
 
 class CategorySeeder extends Seeder
 {
-    public function run(): void
-    {
-        Category::factory()
-        ->count(10)
-        ->create();
-    }
+  public function run(): void
+  {
+
+  }
 }

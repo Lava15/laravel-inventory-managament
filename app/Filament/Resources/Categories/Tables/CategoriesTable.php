@@ -21,17 +21,25 @@ class CategoriesTable
     return $table
       ->columns([
         TextColumn::make('parent.name')
+          ->label(__('filament-panels::category.parent'))
           ->searchable(),
         TextColumn::make('name')
+          ->label(__('filament-panels::category.category_name'))
           ->searchable(),
         TextColumn::make('position')
+          ->label(__('filament-panels::category.position'))
           ->numeric()
           ->sortable(),
         IconColumn::make('is_active')
+          ->label(__('filament-panels::general.is_active'))
           ->boolean(),
         IconColumn::make('is_featured')
+          ->label(__('filament-panels::general.is_featured'))
           ->boolean(),
-        ImageColumn::make('image'),
+        ImageColumn::make('image')
+          ->circular()
+          ->label(__('filament-panels::general.image'))
+          ->toggleable(isToggledHiddenByDefault: true),
         TextColumn::make('deleted_at')
           ->dateTime()
           ->sortable()

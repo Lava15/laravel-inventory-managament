@@ -27,12 +27,12 @@ class CategoryResource extends Resource
 
   public static function getNavigationLabel(): string
   {
-    return __('filament-panels::general.categories');
+    return __('filament-panels::category.categories');
   }
 
   public static function getModelLabel(): string
   {
-    return __('filament-panels::general.categories');
+    return __('filament-panels::category.categories');
   }
 
   public static function getPluralLabel(): ?string

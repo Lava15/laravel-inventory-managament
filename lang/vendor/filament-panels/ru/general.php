@@ -1,8 +1,6 @@
 <?php
 
 return [
-  'category' => 'Категория',
-  'categories' => 'Категории',
   'product' => 'Продукт',
   'products' => 'Продукты',
   'catalog' => 'Каталог',
@@ -36,4 +34,10 @@ return [
   'bots-and-chats' => 'Боты и чаты',
   'ai-agents' => 'AI агенты',
   'ai-agent' => 'AI агент',
+  'is_active' => 'Активен',
+  'is_featured' => 'Избранный',
+  'image' => 'Изображение',
+  'created_at' => 'Создано',
+  'updated_at' => 'Обновлено',
+  'deleted_at' => 'Удалено',
 ];

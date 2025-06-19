@@ -1,8 +1,6 @@
 <?php
 
 return [
-  'category' => 'Turkum',
-  'categories' => 'Turkumlar',
   'product' => 'Mahsulot',
   'products' => 'Mahsulotlar',
   'catalog' => 'Katalog',
@@ -18,7 +16,6 @@ return [
   'send_sms_code' => 'SMS kodni yuborish',
   'sms_code' => 'SMS kod',
   'failed_to_login' => 'Kirishda xatolik',
-  'products' => 'Mahsulotlar',
   'product-variations' => 'Mahsulotlar variantlari',
   'product-variation' => 'Mahsulot varianti',
   'shop' => 'Do\'kon',
@@ -36,4 +33,10 @@ return [
   'bots-and-chats' => 'Botlar va chatlar',
   'ai-agents' => 'AI agentlar',
   'ai-agent' => 'AI agent',
+  'is_active' => 'Faol',
+  'is_featured' => 'Tanlangan',
+  'image' => 'Rasm',
+  'created_at' => 'Yaratilgan vaqti',
+  'updated_at' => 'O\'zgartirilgan vaqti',
+  'deleted_at' => 'O\'chirilgan vaqti',
 ];

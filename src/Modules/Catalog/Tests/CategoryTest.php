@@ -5,13 +5,10 @@ namespace Modules\Catalog\Test;
 use Tests\TestCase;
 use Modules\Catalog\Models\Category;
 use PHPUnit\Framework\Attributes\Test;
-use Modules\Catalog\Models\CategoryTranslation;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use Shared\Enums\LanguageEnums;
 
 class CategoryTest extends TestCase
 {
-  use RefreshDatabase;
   private function createCategory()
   {
     return Category::query()->create([
@@ -58,33 +55,35 @@ class CategoryTest extends TestCase
     ]);
   }
 
-  // /** @test */
-  // public function it_has_parent_child_relationship()
-  // {
-  //     $parent = Category::factory()->create();
-  //     $child = Category::factory()->create(['parent_id' => $parent->id]);
+  #[Test]
+  public function it_has_parent_child_relationship()
+  {
+    $parent = $this->createCategory();
+    $child = Category::query()->create([
+      'name' => 'Child Category',
+      'is_active' => true,
+      'parent_id' => $parent->id,
+    ]);
 
-  //     $this->assertEquals($parent->id, $child->parent->id);
-  //     $this->assertTrue($parent->children->contains($child));
-  // }
+    $this->assertEquals($parent->id, $child->parent->id);
+    $this->assertTrue($parent->children->contains($child));
+  }
 
-  // /** @test */
-  // public function it_deletes_translations_when_force_deleted()
-  // {
-  //     $category = Category::factory()
-  //         ->has(CategoryTranslation::factory()->count(3), 'translations')
-  //         ->create();
+  #[Test]
+  public function it_deletes_translations_when_force_deleted()
+  {
+    $category = $this->createCategory();
 
-  //     $category->forceDelete();
+    $category->forceDelete();
 
-  //     $this->assertDatabaseMissing('categories', ['id' => $category->id]);
-  //     $this->assertDatabaseMissing('category_translations', ['category_id' => $category->id]);
-  // }
+    $this->assertDatabaseMissing('categories', ['id' => $category->id]);
+    $this->assertDatabaseMissing('category_translations', ['category_id' => $category->id]);
+  }
 
-  // /** @test */
-  // public function it_handles_position_default_value()
-  // {
-  //     $category = Category::factory()->create(['position' => null]);
-  //     $this->assertEquals(0, $category->fresh()->position);
-  // }
+  #[Test]
+  public function it_handles_position_default_value()
+  {
+    $category = $this->createCategory();
+    $this->assertEquals(0, $category->fresh()->position);
+  }
 }

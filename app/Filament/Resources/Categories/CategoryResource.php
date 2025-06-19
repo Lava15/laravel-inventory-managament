@@ -20,47 +20,68 @@ use Modules\Catalog\Models\Category;
 
 class CategoryResource extends Resource
 {
-    protected static ?string $model = Category::class;
+  protected static ?string $model = Category::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+  protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedClipboard;
+  protected static ?int $navigationSort = 2;
 
-    public static function form(Schema $schema): Schema
-    {
-        return CategoryForm::configure($schema);
-    }
+  public static function getNavigationLabel(): string
+  {
+    return __('filament-panels::general.categories');
+  }
 
-    public static function infolist(Schema $schema): Schema
-    {
-        return CategoryInfolist::configure($schema);
-    }
+  public static function getModelLabel(): string
+  {
+    return __('filament-panels::general.categories');
+  }
 
-    public static function table(Table $table): Table
-    {
-        return CategoriesTable::configure($table);
-    }
+  public static function getPluralLabel(): ?string
+  {
+    return static::getNavigationLabel();
+  }
 
-    public static function getRelations(): array
-    {
-        return [
-            //
-        ];
-    }
+  public static function getNavigationGroup(): ?string
+  {
+    return __('filament-panels::general.catalog');
+  }
 
-    public static function getPages(): array
-    {
-        return [
-            'index' => ListCategories::route('/'),
-            'create' => CreateCategory::route('/create'),
-            'view' => ViewCategory::route('/{record}'),
-            'edit' => EditCategory::route('/{record}/edit'),
-        ];
-    }
+  public static function form(Schema $schema): Schema
+  {
+    return CategoryForm::configure($schema);
+  }
 
-    public static function getEloquentQuery(): Builder
-    {
-        return parent::getEloquentQuery()
-            ->withoutGlobalScopes([
-                SoftDeletingScope::class,
-            ]);
-    }
+  public static function infolist(Schema $schema): Schema
+  {
+    return CategoryInfolist::configure($schema);
+  }
+
+  public static function table(Table $table): Table
+  {
+    return CategoriesTable::configure($table);
+  }
+
+  public static function getRelations(): array
+  {
+    return [
+      //
+    ];
+  }
+
+  public static function getPages(): array
+  {
+    return [
+      'index' => ListCategories::route('/'),
+      'create' => CreateCategory::route('/create'),
+      'view' => ViewCategory::route('/{record}'),
+      'edit' => EditCategory::route('/{record}/edit'),
+    ];
+  }
+
+  public static function getEloquentQuery(): Builder
+  {
+    return parent::getEloquentQuery()
+      ->withoutGlobalScopes([
+        SoftDeletingScope::class,
+      ]);
+  }
 }

@@ -16,51 +16,48 @@ use Filament\Tables\Table;
 
 class CategoriesTable
 {
-    public static function configure(Table $table): Table
-    {
-        return $table
-            ->columns([
-                TextColumn::make('id')
-                    ->label('ID')
-                    ->searchable(),
-                TextColumn::make('parent.name')
-                    ->searchable(),
-                TextColumn::make('name')
-                    ->searchable(),
-                TextColumn::make('position')
-                    ->numeric()
-                    ->sortable(),
-                IconColumn::make('is_active')
-                    ->boolean(),
-                IconColumn::make('is_featured')
-                    ->boolean(),
-                ImageColumn::make('image'),
-                TextColumn::make('deleted_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-            ])
-            ->filters([
-                TrashedFilter::make(),
-            ])
-            ->recordActions([
-                ViewAction::make(),
-                EditAction::make(),
-            ])
-            ->toolbarActions([
-                BulkActionGroup::make([
-                    DeleteBulkAction::make(),
-                    ForceDeleteBulkAction::make(),
-                    RestoreBulkAction::make(),
-                ]),
-            ]);
-    }
+  public static function configure(Table $table): Table
+  {
+    return $table
+      ->columns([
+        TextColumn::make('parent.name')
+          ->searchable(),
+        TextColumn::make('name')
+          ->searchable(),
+        TextColumn::make('position')
+          ->numeric()
+          ->sortable(),
+        IconColumn::make('is_active')
+          ->boolean(),
+        IconColumn::make('is_featured')
+          ->boolean(),
+        ImageColumn::make('image'),
+        TextColumn::make('deleted_at')
+          ->dateTime()
+          ->sortable()
+          ->toggleable(isToggledHiddenByDefault: true),
+        TextColumn::make('created_at')
+          ->dateTime()
+          ->sortable()
+          ->toggleable(isToggledHiddenByDefault: true),
+        TextColumn::make('updated_at')
+          ->dateTime()
+          ->sortable()
+          ->toggleable(isToggledHiddenByDefault: true),
+      ])
+      ->filters([
+        TrashedFilter::make(),
+      ])
+      ->recordActions([
+        ViewAction::make(),
+        EditAction::make(),
+      ])
+      ->toolbarActions([
+        BulkActionGroup::make([
+          DeleteBulkAction::make(),
+          ForceDeleteBulkAction::make(),
+          RestoreBulkAction::make(),
+        ]),
+      ]);
+  }
 }

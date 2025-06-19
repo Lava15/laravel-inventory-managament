@@ -1,14 +1,15 @@
-<x-layouts.app>
+<x-layouts.app :title=" __('pages/home.title') ">
   <img class="h-full" src="{{  asset('assets/images/hero_banner_desktop.png') }}" alt="">
 
   <section class="py-12 px-4">
     <h2 class="text-3xl font-bold text-green-700 mb-8 text-center">Our Products</h2>
     <!-- Filter Options -->
     <div class="flex justify-center mb-10 flex-wrap gap-4">
-      <button class="px-4 py-2 bg-green-600 text-white rounded-full">All</button>
-      <button class="px-4 py-2 bg-green-100 text-green-700 rounded-full">Keychains</button>
-      <button class="px-4 py-2 bg-green-100 text-green-700 rounded-full">Signs</button>
-      <button class="px-4 py-2 bg-green-100 text-green-700 rounded-full">Accessories</button>
+      @foreach($categories as $category)
+        <a href="#" class="px-4 py-2 bg-green-100 text-green-700 rounded-md md:hover:bg-green-700/70 md:hover:text-white">
+        {{ $category->translation()?->name }} (10)
+        </a>
+      @endforeach
     </div>
 
     <!-- Products Grid -->

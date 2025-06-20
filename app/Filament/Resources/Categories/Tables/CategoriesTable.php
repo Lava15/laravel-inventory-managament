@@ -21,7 +21,7 @@ class CategoriesTable
     return $table
       ->columns([
         TextColumn::make('parent.name')
-          ->label(__('filament-panels::category.parent'))
+          ->label(__('filament-panels::category.parent_category'))
           ->searchable(),
         TextColumn::make('name')
           ->label(__('filament-panels::category.category_name'))

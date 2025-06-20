@@ -20,34 +20,17 @@ class CategoryTranslationsTable
     return $table
       ->columns([
         TextColumn::make('category.name')
+          ->label(__('filament-panels::category.parent_category'))
           ->searchable(),
         TextColumn::make('slug')
+          ->label('Slug')
           ->searchable(),
         TextColumn::make('locale')
+          ->label(__('filament-panels::category.category_locale'))
           ->searchable(),
         TextColumn::make('name')
+          ->label(__('filament-panels::category.category_name'))
           ->searchable(),
-        TextColumn::make('meta_title')
-          ->searchable(),
-        TextColumn::make('meta_description')
-          ->searchable(),
-        TextColumn::make('meta_robots')
-          ->searchable(),
-        TextColumn::make('meta_canonical')
-          ->searchable(),
-        ImageColumn::make('meta_image'),
-        TextColumn::make('deleted_at')
-          ->dateTime()
-          ->sortable()
-          ->toggleable(isToggledHiddenByDefault: true),
-        TextColumn::make('created_at')
-          ->dateTime()
-          ->sortable()
-          ->toggleable(isToggledHiddenByDefault: true),
-        TextColumn::make('updated_at')
-          ->dateTime()
-          ->sortable()
-          ->toggleable(isToggledHiddenByDefault: true),
       ])
       ->filters([
         TrashedFilter::make(),

@@ -1,6 +1,7 @@
 <x-layouts.app :title=" __('pages/home.title') ">
-  <img class="h-full" src="{{  asset('assets/images/hero_banner_desktop.png') }}" alt="">
-  @include('partials.search')
+
+  @include('partials.home.hero-section')
+  @include('partials.home.search')
   <section class="py-12 px-4">
     <h2 class="text-3xl font-bold text-green-700 mb-8 text-center">Our Products</h2>
     <!-- Filter Options -->

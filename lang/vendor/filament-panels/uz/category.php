@@ -3,7 +3,8 @@
 return [
   'category' => 'Turkum',
   'categories' => 'Turkumlar',
-  'parent' => 'Tegishli-turkum',
+  'parent_category' => 'Tegishli-turkum',
   'category_name' => 'Turkum nomi',
   'position' => 'Joylashuvi',
+  'category_translations' => 'Turkum tarjimalari',
 ];

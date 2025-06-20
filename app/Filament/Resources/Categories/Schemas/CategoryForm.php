@@ -14,9 +14,9 @@ class CategoryForm
   {
     return $schema
       ->components([
-        Select::make('parent_id')
-          ->label(__('filament-panels::category.parent'))
-          ->relationship('parent', 'name'),
+        // Select::make('parent_id')
+        //   ->label(__('filament-panels::category.parent'))
+        //   ->relationship('parent', 'name'),
         TextInput::make('name')
           ->label(__('filament-panels::category.category_name'))
           ->required(),

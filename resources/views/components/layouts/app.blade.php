@@ -1,23 +1,26 @@
 @props(['title' => config('app.name') ?? 'Laravel App'])
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" href="{{ asset('assets/favicons/home-icon.ico') }}" type="image/x-icon">
-        <title>{{ $title }}</title>
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
 
-        <!-- Styles / Scripts -->
-        @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
-            @vite(['resources/css/app.css', 'resources/js/app.js'])
-        @endif
-    </head>
-    <body class="bg-[#f3f2f0] text-[#1b1b18] flex p-6 lg:p-8 items-center lg:justify-center min-h-screen flex-col">
-      @include('partials.header')
-      {{$slot}}
-      @include('partials.footer')
-    </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="{{ asset('assets/favicons/home-icon.ico') }}" type="image/x-icon">
+  <title>{{ $title }}</title>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.bunny.net">
+  <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
+
+  <!-- Styles / Scripts -->
+  @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+  @endif
+</head>
+
+<body class="bg-[#f3f2f0] text-[#1b1b18] flex items-center lg:justify-center min-h-screen flex-col">
+  @include('partials.header')
+  {{$slot}}
+  @include('partials.footer')
+</body>
+
 </html>

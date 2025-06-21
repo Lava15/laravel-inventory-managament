@@ -7,6 +7,7 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Schemas\Schema;
+use Shared\Enums\LanguageEnums;
 
 class CategoryTranslationForm
 {
@@ -21,9 +22,13 @@ class CategoryTranslationForm
         TextInput::make('slug')
           ->label('Slug')
           ->required(),
-        TextInput::make('locale')
+        Select::make('locale')
           ->label(__('filament-panels::category.category_locale'))
-          ->required(),
+          ->options([
+            LanguageEnums::Uz->value => LanguageEnums::Uz->getLabel(),
+            LanguageEnums::Ru->value => LanguageEnums::Ru->getLabel(),
+            LanguageEnums::En->value => LanguageEnums::En->getLabel(),
+          ]),
         TextInput::make('name')
           ->label(__('filament-panels::category.category_name'))
           ->required(),

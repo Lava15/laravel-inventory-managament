@@ -3,7 +3,9 @@
     <!-- Logo and Title -->
     <div>
       <div class="flex items-center space-x-2 mb-4">
-        <span class="text-3xl font-bold">MY<span class="text-green-500">CRAFT</span><span class="text-orange-500">🔥</span></span>
+        <span class="text-3xl font-bold">MY<span class="text-green-500">CRAFT</span><span class="text-orange-500">
+        🧺  
+        </span></span>
       </div>
       <p class="text-sm">{{ __('pages/home.sell_and_buy_goods') }}</p>
     </div>
@@ -20,7 +22,7 @@
     <!-- Contact Section -->
     <div>
       <h3 class="font-semibold mb-2">Need help?</h3>
-      <a href="mailto:gge@iberdrola.es" class="hover:underline text-sm">admin@example.uz</a>
+      <a href="mailto:gge@iberdrola.es" class="hover:underline text-sm">admin@example.com</a>
     </div>
   </div>
 

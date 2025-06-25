@@ -1,11 +1,11 @@
 version: '3.9'
 networks:
-  jron-net:
-    name: jron-net
+  mc-net:
+    name: mc-net
     driver: bridge
 services:
   ngninx:
-    container_name: jron-nginx
+    container_name: mc-nginx
     restart: always
     build:
       context: .docker/local/nginx/
@@ -17,19 +17,21 @@ services:
       - 8080:80
       - 443:443
     networks:
-      - jron-net
-  jron-php:
-    container_name: jron-php
+      - mc-net
+  mc-php:
+    container_name: mc-php
     user: "1000:1000" 
     build:
-      context: .docker/local
+      context: .docker/local/php
       dockerfile: php.dockerfile
     volumes:
       - .:/var/www/html
+      - .xdebug_profiles:/var/www/xdebug_profiles
+      - .docker/local/php/php.ini:/usr/local/etc/php/php.ini
     networks:
-      - jron-net
-  jron-db:
-    container_name: jron-db
+      - mc-net
+  mc-db:
+    container_name: mc-db
     image: postgres:17.3-alpine
     restart: always
     ports:
@@ -39,6 +41,6 @@ services:
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=jron
+      - POSTGRES_DB=mc
     networks:
-      - jron-net
+      - mc-net

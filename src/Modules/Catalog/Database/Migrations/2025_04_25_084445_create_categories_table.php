@@ -16,6 +16,7 @@ return new class extends Migration {
       $table->unsignedMediumInteger('position')->default(0);
       $table->boolean('is_active')->default(false);
       $table->boolean('is_featured')->default(false);
+      $table->string('icon')->nullable();
       $table->string('image')->nullable();
       $table->softDeletes();
       $table->timestamps();

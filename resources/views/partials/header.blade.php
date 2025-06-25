@@ -1,4 +1,4 @@
-<header class="w-full bg-green-800 text-white p-4">
+<header class="fixed top-0 w-full bg-green-800 text-white p-4">
   <div class=" mx-auto flex justify-around items-center">
     <div class="flex justify-between gap-4 items-center">
       <a href="{{ route('home') }}" class="text-3xl font-bold">
@@ -14,14 +14,14 @@
         <span>Katalog</span>
         </button>
       <ul class="flex space-x-4">
-        <li>
+        {{-- <li>
           <a href="{{  route('home') }}"
             class="{{ isActiveNavLink('home') }} hover:text-gray-300">{{ __('pages/home.title') }}</a>
         </li>
         <li>
           <a href="{{  route('products:index') }}"
             class="{{ isActiveNavLink('products:index') }} hover:text-gray-300">{{ __('pages/home.show_all_products') }}</a>
-        </li>
+        </li> --}}
       </ul>
     </div>
     <nav>

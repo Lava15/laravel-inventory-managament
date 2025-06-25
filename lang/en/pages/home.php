@@ -8,5 +8,4 @@ return [
   'craft' => 'Craft',
   'sell_and_buy_goods' => 'Sell & Buy Handmade Goods',
   'opening_soon' => 'We are opening soon',
-  'to_be_seller' => 'To be a seller'
-];
+  'to_be_seller' => 'To be a seller' ];

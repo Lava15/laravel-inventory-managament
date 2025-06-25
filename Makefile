@@ -1,10 +1,10 @@
 test:
-	docker exec -it jron-php php artisan test
+	docker exec -it mc-php php artisan test
 clean:
-	docker exec -it jron-php php artisan optimize:clear
+	docker exec -it mc-php php artisan optimize:clear
 migrate:
-	docker exec -it jron-php php artisan migrate
+	docker exec -it mc-php php artisan migrate
 migrate-fresh:
-	docker exec -it jron-php php artisan migrate:fresh
+	docker exec -it mc-php php artisan migrate:fresh --seed
 controller:
-	docker exec -it jron-php php artisan make:controller $1
+	docker exec -it mc-php php artisan make:controller $1

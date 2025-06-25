@@ -19,7 +19,7 @@ final class Category extends Model
   use SoftDeletes;
   use HasUlids;
 
-  protected $fillable = ['name', 'parent_id', 'position', 'is_active', 'is_featured', 'image'];
+  protected $fillable = ['name', 'parent_id', 'position', 'is_active', 'is_featured', 'icon', 'image'];
   protected function casts(): array
   {
     return [

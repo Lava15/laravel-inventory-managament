@@ -1,4 +1,4 @@
-<section class="flex flex-col md:flex-row items-center justify-between p-8 max-w-7xl w-full">
+<section class="mt-24 flex flex-col md:flex-row items-center justify-between p-8 max-w-7xl w-full">
   <!-- Left Block -->
   <div class="md:w-1/2 justify-center space-y-6 text-center md:text-left">
     <h1 class="text-4xl md:text-5xl font-bold text-gray-800"> <span>{{ __('pages/home.my') }}</span> <span

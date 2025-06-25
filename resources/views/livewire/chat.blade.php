@@ -1,4 +1,4 @@
-<div x-cloak x-data="{ open: false }" @click.away="open = false" class="relative">
+<div x-data="{ open: false }" @click.away="open = false" class="relative">
 <div class="flex">
   <button
       @click="open = !open"

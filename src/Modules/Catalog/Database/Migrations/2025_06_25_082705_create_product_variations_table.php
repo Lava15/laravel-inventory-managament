@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('barcode')->nullable();
             $table->string('type');
             $table->string('sku')->unique();
-            $table->decimal('price', 10, 2)->default(0.00);
             $table->unsignedBigInteger('cost')->default(0);
             $table->unsignedBigInteger('price')->default(0);
             $table->integer('quantity')->default(0);

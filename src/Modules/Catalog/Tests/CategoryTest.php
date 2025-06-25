@@ -86,4 +86,11 @@ class CategoryTest extends TestCase
     $category = $this->createCategory();
     $this->assertEquals(0, $category->fresh()->position);
   }
+  #[Test]
+  public function it_can_return_root_category()
+  {
+    $category = $this->createCategory();
+    $rootCategory = Category::query()->root()->first();
+    $this->assertEquals($category->id, $rootCategory->id);
+  }
 }

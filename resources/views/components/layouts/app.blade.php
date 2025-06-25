@@ -17,7 +17,7 @@
   @endif
 </head>
 
-<body x-data="{openCatalog: false}"class="bg-[#f3f2f0] text-[#1b1b18] flex items-center lg:justify-center min-h-screen flex-col">
+<body x-cloak x-data="{openCatalog: false}"class="bg-[#f3f2f0] text-[#1b1b18] flex items-center lg:justify-center min-h-screen flex-col">
   @include('partials.header')
   {{$slot}}
   @include('partials.footer')

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Catalog\Models;
 
+use Illuminate\Database\Eloquent\Attributes\Scope;
 use Moduels\Catalog\Models\Product;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -33,6 +34,11 @@ final class Category extends Model
   protected static function newFactory(): CategoryFactory
   {
     return CategoryFactory::new();
+  }
+  #[Scope]
+  public function root($query) 
+  {
+    return $query->whereNull('parent_id');
   }
   public function children(): HasMany
   {

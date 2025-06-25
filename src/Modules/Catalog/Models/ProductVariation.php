@@ -4,18 +4,35 @@ declare(strict_types=1);
 
 namespace Modules\Catalog\Models;
 
+use Modules\Catalog\Models\ProductVariationTranslation;
 use Moduels\Catalog\Models\Product;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Concerns\HasUlids;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 final class ProductVariation extends Model
 {
   use SoftDeletes;
   use HasUlids;
 
-  protected $fillable = [];
+  protected $fillable = [
+    'sku',
+    'price',
+    'cost',
+    'quantity',
+    'barcode',
+    'type',
+    'image',
+    'attributes',
+    'meta',
+    'order',
+    'is_active',
+    'is_default',
+    'parent_id',
+    'product_id',
+  ];
   protected function casts(): array
   {
     return [];
@@ -30,14 +47,13 @@ final class ProductVariation extends Model
     return $this->belongsTo(ProductVariation::class, 'parent_id');
   }
 
-  public function children(): \Illuminate\Database\Eloquent\Relations\HasMany
+  public function children(): HasMany
   {
     return $this->hasMany(ProductVariation::class, 'parent_id');
   }
-
-  public function getRouteKeyName(): string
+  public function translations(): HasMany
   {
-    return 'slug';
+    return $this->hasMany(ProductVariationTranslation::class, 'product_variation_id');
   }
   // protected static function newFactory(): ProductVariationFactory
   // {

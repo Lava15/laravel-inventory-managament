@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Catalog\Models;
 
+use Moduels\Catalog\Models\Product;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\Catalog\Models\CategoryTranslation;
@@ -51,5 +52,9 @@ final class Category extends Model
       $locale = app()->getLocale();
     }
     return $this->translations->firstWhere('locale', $locale);
+  }
+  public function products(): HasMany
+  {
+    return $this->hasMany(related: Product::class, foreignKey: 'category_id');
   }
 }

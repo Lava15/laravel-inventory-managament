@@ -9,13 +9,12 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration {
   public function up(): void
   {
-    Schema::create('products', function (Blueprint $table) {
+    Schema::create('product_variation_translations', function (Blueprint $table) {
       $table->ulid('id')->primary();
-      $table->string('sku')->unique();
-      $table->unsignedBigInteger('base_price');
-      $table->integer('order')->default(999);
-      $table->boolean('is_active');
-      $table->boolean('is_featured')->default(false);
+      $table->foreignUlid('product_variation_id')->constrained();
+      $table->string('locale', 10);
+      $table->string('name');
+      $table->unique(['product_variation_id', 'locale']);
       $table->softDeletes();
       $table->timestamps();
     });
@@ -24,7 +23,7 @@ return new class extends Migration {
   public function down(): void
   {
     if (app()->isLocal()) {
-      Schema::dropIfExists('products');
+      Schema::dropIfExists('product_variation_translations');
     }
   }
 };

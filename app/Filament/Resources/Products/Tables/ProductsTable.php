@@ -28,7 +28,7 @@ class ProductsTable
                     ->searchable(),
                 TextColumn::make('status')
                     ->searchable(),
-                TextColumn::make('price')
+                TextColumn::make('base_price')
                     ->money()
                     ->sortable(),
                 TextColumn::make('order')

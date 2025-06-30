@@ -36,7 +36,7 @@ final class Category extends Model
     return CategoryFactory::new();
   }
   #[Scope]
-  public function root($query) 
+  public function root($query)
   {
     return $query->whereNull('parent_id');
   }

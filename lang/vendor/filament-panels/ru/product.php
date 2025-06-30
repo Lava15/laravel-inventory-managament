@@ -11,4 +11,7 @@ return [
   'product_category' => 'Принадлежит категории',
   'product_stock' => 'В наличии',
   'product_status' => 'Статус продукта',
+  'product_translations' => 'Переводы продуктов',
+  'product_translation' => 'Перевод продукта',
+  'product_locale' => 'Язык продукта',
 ];

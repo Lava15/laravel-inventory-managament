@@ -12,4 +12,7 @@ return [
   'product_category' => 'Product Category',
   'product_stock' => 'Product Stock',
   'product_status' => 'Product Status',
+  'product_translations' => 'Product translations',
+  'product_translation' => 'Product translation',
+  'product_locale' => 'Product Locale',
 ];

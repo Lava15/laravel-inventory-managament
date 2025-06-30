@@ -15,6 +15,7 @@ return new class extends Migration
             $table->foreignUlid('product_id')->constrained('products');
             $table->foreignUlid('parent_id')->nullable()->constrained('product_variations');
             $table->string('barcode')->nullable();
+            $table->string('qr_code')->nullable();
             $table->string('type');
             $table->string('sku')->unique();
             $table->unsignedBigInteger('cost')->default(0);

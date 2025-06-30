@@ -23,6 +23,7 @@ final class ProductVariation extends Model
     'cost',
     'quantity',
     'barcode',
+    'qr_code',
     'type',
     'image',
     'attributes',

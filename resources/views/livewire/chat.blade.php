@@ -3,7 +3,7 @@
   <button
       @click="open = !open"
       @keydown.escape.window="open = false"
-      class="fixed bottom-4 right-4 inline-flex items-center justify-center text-sm font-medium !bg-gray-800 disabled:pointer-events-none disabled:opacity-50 border rounded-full w-16 h-16   m-0 cursor-pointer border-gray-200  p-0 normal-case leading-5"
+      class="fixed bottom-20 lg:bottom-4 right-4 inline-flex items-center justify-center text-sm font-medium !bg-gray-800 disabled:pointer-events-none disabled:opacity-50 border rounded-full w-16 h-16   m-0 cursor-pointer border-gray-200  p-0 normal-case leading-5"
       type="button" aria-haspopup="dialog" aria-expanded="false" data-state="closed">
       <svg xmlns=" http://www.w3.org/2000/svg" width="30" height="40" viewBox="0 0 24 24" fill="none"
         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"

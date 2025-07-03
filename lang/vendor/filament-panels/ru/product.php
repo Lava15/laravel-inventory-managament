@@ -14,4 +14,6 @@ return [
   'product_translations' => 'Переводы продуктов',
   'product_translation' => 'Перевод продукта',
   'product_locale' => 'Язык продукта',
+  'product_order' => 'Порядок продукта',
+  'product_id' => 'Принадлежит продукту',
 ];

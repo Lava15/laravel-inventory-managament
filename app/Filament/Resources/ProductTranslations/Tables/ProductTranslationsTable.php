@@ -18,32 +18,20 @@ class ProductTranslationsTable
   {
     return $table
       ->columns([
-        TextColumn::make('id')
-          ->label('ID')
-          ->searchable(),
         TextColumn::make('product_id')
+          ->label(__('filament-panels::product.product_id'))
           ->searchable(),
         TextColumn::make('name')
+          ->label(__('filament-panels::product.product_name'))
           ->searchable(),
         TextColumn::make('locale')
           ->label(__('filament-panels::product.product_locale'))
           ->searchable(),
         TextColumn::make('slug')
+          ->label('Slug')
           ->searchable(),
         TextColumn::make('meta_title')
           ->searchable(),
-        TextColumn::make('deleted_at')
-          ->dateTime()
-          ->sortable()
-          ->toggleable(isToggledHiddenByDefault: true),
-        TextColumn::make('created_at')
-          ->dateTime()
-          ->sortable()
-          ->toggleable(isToggledHiddenByDefault: true),
-        TextColumn::make('updated_at')
-          ->dateTime()
-          ->sortable()
-          ->toggleable(isToggledHiddenByDefault: true),
       ])
       ->filters([
         TrashedFilter::make(),

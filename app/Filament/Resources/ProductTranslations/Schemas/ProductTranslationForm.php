@@ -14,21 +14,26 @@ class ProductTranslationForm
   {
     return $schema
       ->components([
-        TextInput::make('product_id')
+        Select::make('product_id')
+          ->relationship('product', 'id')
+          ->label(__('filament-panels::product.product_id'))
           ->required(),
         TextInput::make('name')
+          ->label(__('filament-panels::product.product_name'))
           ->required(),
         Textarea::make('description')
+          ->label(__('filament-panels::product.product_description'))
           ->required()
           ->columnSpanFull(),
         Select::make('locale')
-          ->label(__('filament-panels::category.category_locale'))
+          ->label(__('filament-panels::product.product_locale'))
           ->options([
             LanguageEnums::Uz->value => LanguageEnums::Uz->getLabel(),
             LanguageEnums::Ru->value => LanguageEnums::Ru->getLabel(),
             LanguageEnums::En->value => LanguageEnums::En->getLabel(),
           ]),
         TextInput::make('slug')
+          ->label('Slug')
           ->required(),
         TextInput::make('meta_title'),
         Textarea::make('meta_description')

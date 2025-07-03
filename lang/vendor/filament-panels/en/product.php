@@ -15,4 +15,6 @@ return [
   'product_translations' => 'Product translations',
   'product_translation' => 'Product translation',
   'product_locale' => 'Product Locale',
+  'product_order' => 'Product order',
+  'product_id' => 'Belongs to product',
 ];

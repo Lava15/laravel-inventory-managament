@@ -14,4 +14,6 @@ return [
   'product_translations' => 'Mahsulot tarjimalari',
   'product_translation' => 'Mahsulot tarjimasi',
   'product_locale' => 'Mahsulot lokalizatsiyasi',
+  'product_order' => 'Mahsulot tartibi',
+  'product_id' => 'Tegishli mahsulot',
 ];

@@ -4,10 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\Catalog\Models;
 
-use Illuminate\Database\Eloquent\Concerns\HasUlids;
+use Shared\Enums\LanguageEnums;
+use Moduels\Catalog\Models\Product;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Shared\Enums\LanguageEnums;
+use Illuminate\Database\Eloquent\Concerns\HasUlids;
 
 final class ProductTranslation extends Model
 {
@@ -29,5 +30,9 @@ final class ProductTranslation extends Model
     return [
       'locale' => LanguageEnums::class,
     ];
+  }
+  public function product()
+  {
+    return $this->belongsTo(Product::class, 'product_id');
   }
 }
